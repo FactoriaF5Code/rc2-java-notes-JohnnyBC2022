@@ -8,7 +8,7 @@ El 50% de las empresas utilizan la versión 8, seguida de un 45% que utilizan la
 
 Además, según el índice Tiobe en Enero de 2024, Java es el cuarto lenguaje más utilizado.
 
-### Instalación de JDK (Java Development Kit)
+## Instalación de JDK (Java Development Kit)
 
 (Dejo este apartado por si es preciso revisarlo en el futuro, ya que lo he instalado previamente)
 
@@ -38,7 +38,7 @@ Una vez que estamos en la variable de usuario y en la variable Path, tenemos dos
 
 Así que cuando queramos utilizar otra versión, tan solo debemos editar las variables de entorno según su versión.
 
-### Estructura de un proyecto, paquete y clase.
+## Estructura de un proyecto, paquete y clase.
 
 Un paquete es una forma de estructurar las clases o archivos de JAVA. Una forma habitual de llamar a los paquetes es invertiendo una URL de una página WEB, por ejemplo "com.example". Si examinamos el paquete con el explorador de archivos de Windows, observaremos que nos ha creado una estructura de carpetas similar a esta ruta: src\com\example. Es decir, nos ha creado una carpeta example dentro de una carpeta com.
 
@@ -51,7 +51,7 @@ public class HolaMundo{
 }
 ```
 
-### Método main
+## Método main
 
 El método main es la función fundamental para poder ejecutar cualquier aplicación en JAVA. La JVM (Java Virtual Machine) comienza ejecutando este método cuando se inicia un programa JAVA, excepto que estemos creando una aplicación web en donde el desencadenante del flujo de ejecución sería un controlador que reciba una petición HTTP.
 
@@ -119,7 +119,7 @@ Pero en el caso del método 'main', se necesita ejecutar sin tener una instancia
 > Método: Un método es como una acción que puede realizar la casa. Siguiendo la analogía, podríamos tener un método llamado "abrirPuerta()" que la casa puede ejecutar para abrir su puerta.
 
 
-### Tipos de datos y creación de variables
+## Tipos de datos y creación de variables
 
 A diferencia de Javascript, JAVA es un lenguaje fuertemente tipado, es decir, hay que especificar el tipo de dato con el que se trabaja.
 Los nombres de variables comienzan en minúscula y se suele usar camelCase. Otra diferencia que podemos encontrar con Javascript es que no podemos asignarle un valor **null** a una variable.
@@ -156,7 +156,7 @@ public class Tipos{
 > ***Nota importante:*** Aunque no daría error, una buena práctica es empezar el nombre de las variables y funciones con minúscula y las clases con mayúscula. Fijarse que String es una clase.
 
 
-### Palabras reservadas
+## Palabras reservadas
 
 Existen palabras reservadas en JAVA que no pueden ser utilizadas como identificadores en los programas.
 
@@ -164,10 +164,62 @@ En el siguiente documento podemos ver el listado completo:
 
 https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
 
-### Ejercicio de repaso 1:
+## Ejercicio de repaso 1:
 
 - Crear un proyecto de java desde cero.
 - Crear un paquete.
 - Dentro del paquete crear una clase.
 - Dentro de la clase crear un método main.
 - Imprimir todos los tipos de datos vistos.
+
+
+##  Operadores
+
+### Operadores aritméticos
+
+```java
+public class Operadores {
+    public static void main(String[] args) {
+        int numero1 = 10;
+        int numero2 = 20;
+        int resultadoSuma = numero1 + numero2;
+
+        System.out.println(resultadoSuma);
+        
+        int resultadoResta = numero1 - numero2;
+        System.out.println(resultadoResta);
+
+
+        int resultadoMultiplicacion = numero1 * numero2;
+        System.out.println(resultadoMultiplicacion);
+        float resultadoDivision = numero1 / numero2;
+        System.out.println(resultadoDivision);
+    }
+}
+```
+
+### Operadores de comparación
+
+```java
+public class Operadores {
+    public static void main(String[] args) {
+        int numero1 = 10;
+        int numero2 = 20;
+        int resultadoSuma = numero1 + numero2;
+
+        /*
+        >: mayor que
+        <: menor que
+        >= mayor o igual que
+        <= menor o igual que
+        == igual que
+        */
+
+       boolean resultado1 = numero1 > numero2; // false
+       System.out.println(resultado1);
+       
+       boolean resultado2 = numero1 < numero2; // true
+       System.out.println(resultado2);
+    }
+}
+```
