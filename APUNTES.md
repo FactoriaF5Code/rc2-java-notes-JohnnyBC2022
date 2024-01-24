@@ -154,3 +154,20 @@ public class Tipos{
 ```
 
 > ***Nota importante:*** Aunque no daría error, una buena práctica es empezar el nombre de las variables y funciones con minúscula y las clases con mayúscula. Fijarse que String es una clase.
+
+
+### Palabras reservadas
+
+Existen palabras reservadas en JAVA que no pueden ser utilizadas como identificadores en los programas.
+
+En el siguiente documento podemos ver el listado completo:
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+
+### Ejercicio de repaso 1:
+
+- Crear un proyecto de java desde cero.
+- Crear un paquete.
+- Dentro del paquete crear una clase.
+- Dentro de la clase crear un método main.
+- Imprimir todos los tipos de datos vistos.
