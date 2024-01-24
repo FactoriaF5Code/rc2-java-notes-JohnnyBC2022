@@ -81,7 +81,7 @@ Supongamos que tienes una clase llamada Persona:
 public class Persona {
     String nombre;
 
-    public Persona(String nombre) {
+    public persona(String nombre) {
         this.nombre = nombre;
     }
 
@@ -89,7 +89,6 @@ public class Persona {
         System.out.println("Hola, soy " + nombre);
     }
 }
-
 ```
 
 Se pueden crear instancias específicas de esta clase, es decir, objetos "Persona con nombres diferentes".
@@ -97,7 +96,6 @@ Se pueden crear instancias específicas de esta clase, es decir, objetos "Person
 ```java
 Persona persona1 = new Persona("Juan");
 Persona persona2 = new Persona("María");
-
 ```
 
 Aquí, 'persona 1 ' y 'persona 2' son instancias específicas de la clase persona. Cada instancia tiene datos que son diferentes. Si el método no fuera **estático** se tendría que llamar desde una instancia específica de la clase 'persona'.
@@ -105,7 +103,6 @@ Aquí, 'persona 1 ' y 'persona 2' son instancias específicas de la clase person
 ```java
 persona1.saludar();
 persona2.saludar();
-
 ```
 Pero en el caso del método 'main', se necesita ejecutar sin tener una instancia específica de la clase porque la JVM lo invoca directamente, por eso el método main debe ser **estático**
 
@@ -122,4 +119,38 @@ Pero en el caso del método 'main', se necesita ejecutar sin tener una instancia
 > Método: Un método es como una acción que puede realizar la casa. Siguiendo la analogía, podríamos tener un método llamado "abrirPuerta()" que la casa puede ejecutar para abrir su puerta.
 
 
-### Errores
+### Tipos de datos y creación de variables
+
+A diferencia de Javascript, JAVA es un lenguaje fuertemente tipado, es decir, hay que especificar el tipo de dato con el que se trabaja.
+Los nombres de variables comienzan en minúscula y se suele usar camelCase. Otra diferencia que podemos encontrar con Javascript es que no podemos asignarle un valor **null** a una variable.
+
+```java
+package com.example
+
+public class Tipos{
+    public static void main(String[] args) {
+
+        // 1.numéricos
+        //1.1 enteros: (La diferencia es la cantidad de memoria que pueden ocupar, los más usados son int y long)
+        byte variable1 = 10;
+        short variable2 = 5;
+        int variable3 = 30;
+        long variable4 = 100;
+
+        //1.2 decimales
+        float variable5 = 5.5f;
+        double variable6 = 10.5d;
+
+        //2. booleanos
+        boolean variable7 = false;
+        boolean variable8 = true;
+
+        //3. texto
+
+        char variable9 = "a";
+        String variable = 'palabra';
+    }
+}
+```
+
+> ***Nota importante:*** Aunque no daría error, una buena práctica es empezar el nombre de las variables y funciones con minúscula y las clases con mayúscula. Fijarse que String es una clase.
