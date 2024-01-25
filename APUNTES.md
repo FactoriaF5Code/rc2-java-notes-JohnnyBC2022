@@ -104,6 +104,7 @@ Aquí, 'persona 1 ' y 'persona 2' son instancias específicas de la clase person
 persona1.saludar();
 persona2.saludar();
 ```
+
 Pero en el caso del método 'main', se necesita ejecutar sin tener una instancia específica de la clase porque la JVM lo invoca directamente, por eso el método main debe ser **estático**
 
 - El modificador **void**: indica que el método no devuelve ningún dato.
@@ -111,13 +112,11 @@ Pero en el caso del método 'main', se necesita ejecutar sin tener una instancia
 
 - **System.out.println(".....")**: Aquí se emplea la clase System para imprimir por consola. 'out' es una instancia de 'PrintStream' y 'println' es un método de esa instancia que imprime una línea en la consola.
 
- 
 > Clase: Una clase es como un plano o un molde para crear cosas. Imagina que tienes un plano para construir casas. Ese plano (clase) describe cómo deben ser las casas, qué habitaciones tendrán, cómo se verán, etc.
 
 > Instancia: Una instancia es como una casa específica que se ha construido siguiendo ese plano. Si tienes un plano para construir casas (clase), puedes construir varias casas (instancias) siguiendo ese diseño.
 
 > Método: Un método es como una acción que puede realizar la casa. Siguiendo la analogía, podríamos tener un método llamado "abrirPuerta()" que la casa puede ejecutar para abrir su puerta.
-
 
 ## Tipos de datos y creación de variables
 
@@ -153,8 +152,7 @@ public class Tipos{
 }
 ```
 
-> ***Nota importante:*** Aunque no daría error, una buena práctica es empezar el nombre de las variables y funciones con minúscula y las clases con mayúscula. Fijarse que String es una clase.
-
+> **_Nota importante:_** Aunque no daría error, una buena práctica es empezar el nombre de las variables y funciones con minúscula y las clases con mayúscula. Fijarse que String es una clase.
 
 ## Palabras reservadas
 
@@ -172,8 +170,7 @@ https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
 - Dentro de la clase crear un método main.
 - Imprimir todos los tipos de datos vistos.
 
-
-##  Operadores
+## Operadores
 
 ### Operadores aritméticos
 
@@ -185,7 +182,7 @@ public class Operadores {
         int resultadoSuma = numero1 + numero2;
 
         System.out.println(resultadoSuma);
-        
+
         int resultadoResta = numero1 - numero2;
         System.out.println(resultadoResta);
 
@@ -217,9 +214,144 @@ public class Operadores {
 
        boolean resultado1 = numero1 > numero2; // false
        System.out.println(resultado1);
-       
+
        boolean resultado2 = numero1 < numero2; // true
        System.out.println(resultado2);
     }
 }
 ```
+
+La diferencia respecto a **_Javascript_** es que no es necesario el uso de === para saber si dos variables son iguales ya que **_JAVA_** es un lenguaje fuertemente tipado que nos obliga a declarar el tipo de dato.
+
+### Operadores lógicos
+
+```java
+public class Operadores {
+    public static void main(String[] args) {
+        int numero1 = 10;
+        int numero2 = 20;
+
+        /*
+        and: && (Si todas las condiciones que evaluamos son verdaderas devuelve un true)
+        or: || (Si una de las condiciones que evaluamos es verdadera devuelve un true)
+        */
+
+       boolean resultado1 = numero1 > 5 && numero < 30; // true
+       System.out.println(resultado1);
+
+       int edad = 17;
+       boolean carnetJoven = edad >= 15 && edad <=26; // true
+    }
+}
+```
+
+## Funciones
+
+Una función es un bloque de código que podemos reutilizar. En JAVA debemos indicar a la función que tipo de dato queremos que devuelva y si no queremos que devuelva ninguno, usaremos **_void_**.
+
+### Función sin parámetros y sin tipo de retorno
+
+```java
+public class Funciones {
+    public static void main(String[] args) {
+        showMenu(); //invocamos la función
+    }
+}
+    // crear una función
+    static void showMenu(){
+        System.out.println("Bienvenidos al E-commerce de zapatillas:")
+        System.out.println("1 - Ver zapatillas")
+        System.out.println("2 - Comprar zapatillas:")
+        System.out.println("3 - Salir")
+    }
+```
+
+### Funciones sin parámetros y con tipo de retorno
+
+```java
+public class Funciones {
+    public static void main(String[] args) {
+        String menu = getMenu(); // debemos guardar el retorno
+        System.out.println(menu);
+        System.out.println(getMenu());
+
+        double price = getPrice();
+        System.out.println(price);
+    }
+}
+    static String getMenu(){
+        System.out.println("Imprimiendo texto de prueba");
+        return "Bienvenidos al E-commerce de zapatillas: \n 1 - Ver zapatillas.....";
+    }
+
+    static double getPrice() {
+        return 100.99;
+    }
+```
+
+### Funciones con parámetros y sin tipo de retorno
+
+```java
+public class Funciones {
+    public static void main(String[] args) {
+        imprimirSaludoBuenosDias("RuralCamp");
+    }
+}
+    static void imprimirSaludoBuenosDias(String nombre){  // El parámetro se escribe como el tipo de dato que es y el nombre del parámetro
+        System.out.println("Buenas tardes" + nombre);
+    }
+```
+
+### Funciones con parámetros y con tipo de retorno
+
+```java
+public class Funciones {
+    public static void main(String[] args) {
+        String nombre = "Jonathan";
+        String apellido = "Baragaño";
+        String saludo = obtenerSaludo(nombre, apellido);
+        System.out.println(saludo);
+    }
+}
+    static String obtenerSaludo(String nombre, String apellido){
+        return "Buenas tardes" + nombre + " " + apellido;
+    }
+
+    // Otro ejemplo
+
+    static int suma(int num1, int num2){
+        return num1 + num2;
+    }
+
+    public static void main(String[] args){
+        int resultadoSuma1 = suma(20,500);
+        int resultadoSuma2 = suma(24,13);
+        System.out.println(resultadoSuma);
+    }
+```
+
+## Sobrecarga de funciones
+
+La sobrecarga de funciones permite duplicar un método siempre y cuando tengan diferente numero/tipo de parámetros.
+
+```java
+public class Sobrecarga {
+    public static void main(String[] args){
+        }
+        static int suma(int num1, int num2){
+            return num1 + num2;
+        }
+        static double suma(double num1, double num2){
+            return num1 + num2;
+        }
+        static int suma(int num1, int num2, int num3){
+            return num1 + num2 + num3;
+        }
+}
+```
+
+## Ejercicio de repaso 2
+
+Crear una función que reciba un precio y devuelva el precio con el IVA incluido
+
+
